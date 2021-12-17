@@ -1,0 +1,67 @@
+<html>
+    <body>
+        <a href='/'>Home page</a>
+        <form method='post'>
+            <div>
+                <label>
+                    Date:
+                    <input type='date' name='seance_date' value={{seance_date}}>
+                </label>
+                <label>
+                    Time:
+                    <input type='time' name='seance_time' value={{seance_time}}>
+                </label>
+                <label>
+                    Cabinet:
+                    <input type='number' name='cabinet' value={{seance.cabinet}}>
+                </label>
+
+                <label> Select doctor
+                    <select name="doctor_id">
+                    {% if selected_doctor%}
+                        <option value="{{selected_doctor.id}}">{{selected_doctor.surname}}</option>
+                    {% endif %}
+                    {% for doctor in doctors%}
+                        <option value="{{doctor.id}}">{{doctor.surname}}</option>
+                    {%endfor%}
+                    </select>
+                </label>
+
+                <label> Select patient
+                    <select name="patient_id">
+                    {% if selected_patient%}
+                        <option value="{{selected_patient.id}}">{{selected_patient.surname}}</option>
+                    {% endif %}
+                    {% for patient in patients%}
+                        <option value="{{patient.id}}">{{patient.surname}}</option>
+                    {%endfor%}
+                    </select>
+                </label>
+
+                <label> Select diagnosis
+                    <select name="diagnosis_id">
+                    {% if selected_diagnosis%}
+                        <option value="{{selected_diagnosis.id}}">{{selected_diagnosis.description}}</option>
+                    {% endif %}
+                    {% for diagnosis in diagnosises%}
+                        <option value="{{diagnosis.id}}">{{diagnosis.description}}</option>
+                    {%endfor%}
+                    </select>
+                </label>
+
+                <label> Select procedure
+                    <select name="procedure_id">
+                    {% if selected_procedure%}
+                        <option value="{{selected_procedure.id}}">{{selected_procedure.name}}</option>
+                    {% endif %}
+                    {% for procedure in procedures%}
+                        <option value="{{procedure.id}}">{{procedure.name}}</option>
+                    {%endfor%}
+                    </select>
+                </label>
+                 
+           <input type="submit" value="Add">
+           </div>
+        </form>
+    </body>
+</html>

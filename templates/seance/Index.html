@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+    <a href='/'>Home page</a>
+    <h1>Seances. <a href="add">Add another seance...</a></h1>
+        {% for seance in seances %}
+            <div class="Clinic">
+                <h3>At: {{seance.seance_datatime}}</h3>
+                <h2>Cabinet: {{seance.cabinet}}</h3>
+                <p>{{seance.doctor}}</p>
+                <p>{{seance.patient}}</p>
+                <p>{{seance.diagnosis}}</p>
+                <p>{{seance.procedure}}</p>
+                <form >
+                    <input type="hidden" name="id_to_remove" value={{seance.id}}>
+                    <input type="submit" value="Remove">
+                </form>
+                <form action="edit">
+                    <input type="hidden" name="id_to_edit" value={{seance.id}}>
+                    <input type="submit" value="Edit seance info">
+                </form>
+            </div>
+        {% endfor %}
+    </body>
+</html>

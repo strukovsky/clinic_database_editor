@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+    <h1>Available patients. <a href="add">Add another patient...</a></h1>
+        {% for patient in patients %}
+            <div class="Clinic">
+                <h2>{{patient.surname}} {{patient.name}} {{patient.patronymic}}</h2>
+                <h3>{{patient.birth}}</h3>
+                <h3>Address: {{patient.address}}</h3>
+                <p>POLIS: {{patient.id}}</p>
+                <p></p>
+                <form >
+                    <input type="hidden" name="id_to_remove" value={{patient.id}}>
+                    <input type="submit" value="Remove">
+                </form>
+                <form action="edit">
+                    <input type="hidden" name="id_to_edit" value={{patient.id}}>
+                    <input type="submit" value="Edit patient">
+                </form>
+            </div>
+        {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <body>
+     <a href='/'>Home page</a>
+        <form method='post'>
+            <div>
+                <input type="hidden" name="id" value="{{clinic.id}}">
+           <label>
+                Address:
+                <input type='text' name='address' value="{{clinic.address}}">
+           </label>
+           <label>
+                Specialisation:
+                <input type='text' name='speciality' value="{{clinic.speciality}}">
+           </label>
+           <label>
+                Type:
+                <input type='text' name='clinic_type' value="{{clinic.clinic_type}}">
+           </label>
+           <input type="submit" value="Save changes">
+           </div>
+        </form>
+    </body>
+</html>

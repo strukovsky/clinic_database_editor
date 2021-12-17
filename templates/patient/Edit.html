@@ -1,0 +1,34 @@
+<html>
+    <body>
+         <a href='/'>Home page</a>
+        <form method='post'>
+            <div>
+            <label>
+                    Polis:
+                    <input type='number' name='id' value="{{patient.id}}">
+            </label>
+            <label>
+                Surname:
+                <input type='text' name='surname' value="{{patient.surname}}">
+            </label>
+            <label>
+                Name:
+                <input type='text' name='name'  value="{{patient.name}}">
+            </label>
+            <label>
+                Patronymic:
+                <input type='text' name='patronymic'  value="{{patient.patronymic}}">
+            </label>
+           <label>
+                Address:
+                <input type='text' name='address' value="{{patient.address}}">
+           </label>
+           <label>
+            Date of birth:
+            <input type='date' name='birth'  value="{{patient.birth}}">
+             </label>
+           <input type="submit" value="Add">
+           </div>
+        </form>
+    </body>
+</html>

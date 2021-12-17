@@ -1,0 +1,23 @@
+<html>
+    <body>
+         <a href='/'>Home page</a>
+        <form method='post'>
+            <div>
+                <input type='hidden' name='id' value={{procedure.id}}
+                <label>
+                    Name:
+                    <input type='text' name='name' value={{procedure.name}}>
+                </label>
+                <label>
+                    Duration:
+                    <input type='number' name='duration'  value={{procedure.duration}}>
+                </label>
+               <label>
+                    Price:
+                    <input type='number' name='price'  value={{procedure.price}}>
+               </label>
+               <input type="submit" value="Save">
+           </div>
+        </form>
+    </body>
+</html>

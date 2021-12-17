@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+    <h1>Available procedures. <a href="add">Add another procedure...</a></h1>
+        {% for procedure in procedures %}
+            <div class="Clinic">
+                <h2>{{procedure.name}} </h2>
+                <h3>Price: {{procedure.price}}</h3>
+                <h3>Duration: {{procedure.duration}} min </h3>
+                <p></p>
+                <form >
+                    <input type="hidden" name="id_to_remove" value={{procedure.id}}>
+                    <input type="submit" value="Remove">
+                </form>
+                <form action="edit">
+                    <input type="hidden" name="id_to_edit" value={{procedure.id}}>
+                    <input type="submit" value="Edit procedure">
+                </form>
+            </div>
+        {% endfor %}
+    </body>
+</html>
