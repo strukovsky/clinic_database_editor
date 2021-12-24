@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+        <h1>Special query page</h1>
+        <h2>Doctors of patient</h2>
+        <form method='post'>
+            <label>
+                Enter patient's polis
+                <input type='number' min='1' name='patient_id'>
+            </label>
+            <input type='submit' value='Find doctors'>
+        </form>
+    </body>
+</html>

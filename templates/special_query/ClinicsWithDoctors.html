@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+        <h1>Special query page</h1>
+        {% for clinic in clinics %}
+        <div class="Clinic">
+            <h3>{{clinic.clinic_type}}</h3>
+            <h2>{{clinic.speciality}}</h3>
+            <p>{{clinic.address}}</p>
+        </div>
+    {% endfor %}
+    </body>
+</html>

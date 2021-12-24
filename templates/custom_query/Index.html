@@ -1,0 +1,9 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+        <h1>Custom query page</h1>
+        {% include 'custom_query/QueryInput.html' %}
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <body>
+        <a href='/'>Home page</a>
+        <h1>Custom query page</h1>
+        <h2>Query result</h2>
+        {% include 'custom_query/QueryInput.html' %}
+        <table>
+            <small>If there's no output below then query has been executed correctly but it does not have any output.</small>
+            {% for item in data%}
+            <tr>
+                {% for value in item %}
+                    <td>{{value}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

@@ -5,11 +5,13 @@ from flask import (
     Response
 )
 from clinic import clinic_blueprint
+from custom_query import custom_query_blueprint
 from doctor import doctor_blueprint
 from patient import patient_blueprint
 from procedure import procedure_blueprint
 from diagnosis import diagnosis_blueprint
 from seance import seance_blueprint
+from special_query import special_query_blueprint
 from os.path import exists
 from db_config import setup_scheme, populate_database, get_db
 from error import error_blueprint
@@ -22,6 +24,8 @@ app.register_blueprint(procedure_blueprint)
 app.register_blueprint(diagnosis_blueprint)
 app.register_blueprint(seance_blueprint)
 app.register_blueprint(error_blueprint)
+app.register_blueprint(custom_query_blueprint)
+app.register_blueprint(special_query_blueprint)
 
 @app.before_first_request
 def setup_db():
